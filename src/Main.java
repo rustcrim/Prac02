@@ -16,6 +16,8 @@ public class Main {
     };
     private static boolean isRunning = true;
 
+    private static int x = 5;
+
     /**
      * The entry point of the application.
      * @param args The command-line arguments.
