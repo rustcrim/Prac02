@@ -1,3 +1,5 @@
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -22,6 +24,7 @@ public class Main {
 
     /**
      * The entry point of the application.
+     *
      * @param args The command-line arguments.
      */
     public static void main(String[] args) {
@@ -48,6 +51,7 @@ public class Main {
 
     /**
      * Handles the user's choice, mapping the menu options to the corresponding methods.
+     *
      * @param choice The user's choice.
      */
     public static void handleMenu(int choice) {
@@ -78,7 +82,7 @@ public class Main {
         String password = scanner.nextLine();
         User user = authService.logIn(username, password);
         System.out.println("Welcome, " + user.getUsername() + "!");
-        // TODO Later: Add the to-do list operations
+        // TODO Now: Create an instance of the ToDoList class with the logged-in user and call the run method
     }
 
     /**
@@ -99,5 +103,17 @@ public class Main {
      */
     public static void onExit() {
         isRunning = false;
+    }
+
+    public static void onSignUp() {
+        System.out.print("Enter your username: ");
+        Scanner scanner = new Scanner(System.in);
+        String username = scanner.nextLine();
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();
+        User user = authService.signUp(username, password);
+        // TODO Now: Show a message based on the result of the signUp method:
+        // - If the user is not null, show "User <username> has been created successfully!"
+        // - If the user is null, show "The username is already taken!"
     }
 }
